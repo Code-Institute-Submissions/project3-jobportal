@@ -17,7 +17,7 @@ data = conn[DATABASE_NAME][COLLECTION_NAME]
 
 @app.route('/') # map the root route to the index function
 def index():
-    return "hello world"
+    return render_template('index.html')
 
 
 
