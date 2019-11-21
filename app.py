@@ -24,6 +24,11 @@ def employee():
     result = data.find({})
     return render_template('employee.html', data = result)
 
+@app.route('/employer')
+def employer():
+    result = data.find({})
+    return render_template('employer.html', data = result)
+
 @app.route('/edit_post/<task_id>')
 def edit_post(task_id):
     return render_template('edit_post.html')
