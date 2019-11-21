@@ -17,10 +17,12 @@ data = conn[DATABASE_NAME][COLLECTION_NAME]
 
 @app.route('/') # map the root route to the index function
 def index():
-    result = data.find({})
-    return render_template('index.html', data = result)
+    return render_template('index.html')
 
-
+@app.route('/employee')
+def employee():
+    # result = data.find({})
+    return render_template('employee.html')
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
