@@ -45,6 +45,7 @@
         <th scope="col">Salary</th>
         <th scope="col">Description</th>
         <th scope="col">Requirements</th>
+        <th scope="col"></th>
       </tr>
         </thead>
         <tbody>
@@ -58,6 +59,7 @@
                  - Required License: {{ d.requirement.license }}<br/>
                  - Working Experience: {{ d.requirement.experience }} years<br/>
                  - Driving License : {{ d.requirement.driving_license }}</td>
+            <td> <a class='btn btn-secondary text-light' href=" {{ url_for('edit_post', task_id=d['_id'] )}}">Edit Listing </a></td>
           </tr>
           {% endfor %}
         </tbody>

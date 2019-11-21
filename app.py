@@ -24,6 +24,10 @@ def employee():
     result = data.find({})
     return render_template('employee.html', data = result)
 
+@app.route('/edit_post/<task_id>')
+def edit_post(task_id):
+    return render_template('edit_post.html')
+
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.secret_key = 'super secret key'
