@@ -29,10 +29,18 @@ def employer():
     result = data.find({})
     return render_template('employer.html', data = result)
 
+@app.route('/new_post')
+def new_post():
+    return render_template('new_post.html')
+    
 @app.route('/edit_post/<task_id>')
 def edit_post(task_id):
     return render_template('edit_post.html')
-
+    
+@app.route('/remove_post/<task_id>')
+def remove_post(task_id):
+    return render_template('remove_post.html')
+    
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.secret_key = 'super secret key'
