@@ -21,8 +21,8 @@ def index():
 
 @app.route('/employee')
 def employee():
-    # result = data.find({})
-    return render_template('employee.html')
+    result = data.find({})
+    return render_template('employee.html', data = result)
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
