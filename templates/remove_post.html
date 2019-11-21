@@ -10,9 +10,23 @@
 
     <title>Hello, world!</title>
   </head>
-  <body>
-    <h1>Hello,REMOVE  world!</h1>
-
+  <body>  
+    <div class='container-fluid p-5'>
+      <p>You are about to remove the following listing. To remove, please click on the '<span class='text-danger'>Confirm Remove</span>' Button</Confirm></p>
+      <table class="table border">
+        <tr>
+          <td> {{ d.position }} </td>
+          <td> {{ d.company }} </td>
+          <td> {{ "${:,}".format(d.salary) }} </td>
+          <td> {{ d.description }} </td>
+          <td> - Nationality: {{ d.requirement.nationality }}<br/>
+               - Required License: {{ d.requirement.license }}<br/>
+               - Working Experience: {{ d.requirement.experience }} years<br/>
+               - Driving License : {{ d.requirement.driving_license }}</td>
+        </tr>
+      </table>
+      <a class='btn btn-danger text-light' href=" {{ url_for('confirm_remove_post', task_id=d['_id'] )}}">Confirm Remove</a>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

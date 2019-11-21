@@ -2,6 +2,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
 import pymongo	
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 	
@@ -39,8 +40,19 @@ def edit_post(task_id):
     
 @app.route('/remove_post/<task_id>')
 def remove_post(task_id):
-    return render_template('remove_post.html')
-    
+    task = data.find_one({
+        '_id':ObjectId(task_id)
+    })
+    return render_template('remove_post.html', d=task)
+
+@app.route('/confirm_remove_post/<task_id>')
+def confirm_remove_post(task_id):
+    data.delete_one({
+        '_id':ObjectId(task_id)
+    })
+    result = data.find({})
+    return render_template('employer.html', data = result)
+
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.secret_key = 'super secret key'
