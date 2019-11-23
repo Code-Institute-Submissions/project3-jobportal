@@ -97,14 +97,14 @@ def update_post(task_id):
         })    
     return redirect(url_for('employer'))
 
-
+# Link to check if user confirm wants to delete the post
 @app.route('/remove_post/<task_id>')
 def remove_post(task_id):
     task = data.find_one({
         '_id':ObjectId(task_id)
     })
     return render_template('remove_post.html', d=task)
-
+# Proceed to delete from database and return to employer.html
 @app.route('/confirm_remove_post/<task_id>')
 def confirm_remove_post(task_id):
     data.delete_one({
