@@ -11,6 +11,29 @@
     <title>Hello, world!</title>
   </head>
   <body>  
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand font-italic" href="{{ url_for('index') }}"><strong><span class="text-warning">JTE</span> Recruit</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('index') }}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('employee') }}">Jobs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('employer') }}">For Employers</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /navbar -->
+    
+    <!--Confirmation to remove-->
     <div class='container-fluid p-5'>
       <p>You are about to remove the following listing. To remove, please click on the '<span class='text-danger'>Confirm Remove</span>' Button</Confirm></p>
       <table class="table border">
@@ -28,6 +51,19 @@
       <a href="{{ url_for('employer') }}" class='btn btn-warning mr-1'> Cancel </a>
       <a class='btn btn-danger text-light' href=" {{ url_for('confirm_remove_post', task_id=d['_id'] )}}">Confirm Remove</a>
     </div>
+    <!--/.Confirmation to remove-->
+
+    <!-- Footer -->
+    <div class="bg-light border-top pt-3 pb-5">
+        <h4 class=' font-italic text-center'>" A company’s most valuable asset is its employees. "</h4>
+        <div class="text-center">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+        </div>
+    </div>
+    <!-- /.footer --> 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -1,6 +1,6 @@
 .callout-container {
     height: 100vh;
-    background: url('../static/images/x.jpg') no-repeat center center fixed;
+    background: url('/static/img/recruit-employee.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
