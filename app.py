@@ -34,6 +34,29 @@ def employer():
 def new_post():
     return render_template('new_post.html')
     
+@app.route('/new_post', methods=["POST"])
+def insert_post():
+    position = request.form.get('position')
+    company = request.form.get('company')
+    description = request.form.get('description')
+    salary = int(request.form.get('salary'))
+    nationality = request.form.get('nationality')
+    professional_license = request.form.get('professional_license')
+    working_experience = request.form.get('working_experience')
+    
+    data.insert({
+        'position':position,
+        'company':company,
+        'description':description,
+        'salary':salary,
+        'requirement':{
+            'nationality': nationality,
+            'professional_license':professional_license,
+            'working_experience':working_experience
+        }
+    })
+    return redirect(url_for('employer'))
+    
 @app.route('/edit_post/<task_id>')
 def edit_post(task_id):
     return render_template('edit_post.html')
