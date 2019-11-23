@@ -25,6 +25,7 @@
                - Driving License : {{ d.requirement.driving_license }}</td>
         </tr>
       </table>
+      <a href="{{ url_for('employer') }}" class='btn btn-warning mr-1'> Cancel </a>
       <a class='btn btn-danger text-light' href=" {{ url_for('confirm_remove_post', task_id=d['_id'] )}}">Confirm Remove</a>
     </div>
     <!-- Optional JavaScript -->
