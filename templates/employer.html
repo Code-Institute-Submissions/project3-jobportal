@@ -62,8 +62,8 @@
             <td> {{ "${:,}".format(d.salary) }} </td>
             <td> {{ d.description }} </td>
             <td> - Nationality: {{ d.requirement.nationality }}<br/>
-                 - Required License: {{ d.requirement.license }}<br/>
-                 - Working Experience: {{ d.requirement.experience }} years<br/>
+                 - Required License: {{ d.requirement.professional_license }}<br/>
+                 - Working Experience: {{ d.requirement.working_experience }}<br/>
             <td> <a class='btn btn-secondary text-light my-1' href=" {{ url_for('edit_post', task_id=d['_id'] )}}">Edit Listing </a><br/>
                  <a class='btn btn-danger text-light' href=" {{ url_for('remove_post', task_id=d['_id'] )}}">Remove Listing </a></td>
           </tr>
