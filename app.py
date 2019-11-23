@@ -80,7 +80,21 @@ def update_post(task_id):
     professional_license = request.form.get('professional_license')
     working_experience = request.form.get('working_experience')
     
-    
+    data.update({
+        '_id':ObjectId(task_id)
+        }, {
+        '$set': {
+                'position':position,
+                'company':company,
+                'description':description,
+                'salary':salary,
+                'requirement':{
+                    'nationality': nationality,
+                    'professional_license':professional_license,
+                    'working_experience':working_experience
+                }
+                }
+        })    
     return redirect(url_for('employer'))
 
 

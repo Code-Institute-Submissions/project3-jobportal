@@ -56,9 +56,8 @@
             <td> {{ "${:,}".format(d.salary) }} </td>
             <td> {{ d.description }} </td>
             <td> - Nationality: {{ d.requirement.nationality }}<br/>
-                 - Required License: {{ d.requirement.license }}<br/>
-                 - Working Experience: {{ d.requirement.experience }} years<br/>
-                 - Driving License : {{ d.requirement.driving_license }}</td>
+                 - Required License: {{ d.requirement.professional_license }}<br/>
+                 - Working Experience: {{ d.requirement.working_experience }}<br/>
             <td> <a class='btn btn-warning text-light' href="">Apply </a></td>
           </tr>
           {% endfor %}
